@@ -5,16 +5,13 @@ import NextError from "next/error";
 import { useEffect } from "react";
 
 export default function GlobalError({ error }) {
-  console.log("Error object:", error);
-  console.log("Sentry object:", Sentry);
+
 
   useEffect(() => {
-    try {
-      if (Sentry && error) {
-        Sentry.captureException(error);
-      }
-    } catch (sentryError) {
-      console.error('Sentry failed to capture the error:', sentryError);
+    if (typeof Sentry !== 'undefined' && error) {
+      Sentry.captureException(error);
+    } else {
+      console.warn('Sentry is not defined or error is missing');
     }
   }, [error]);
 
