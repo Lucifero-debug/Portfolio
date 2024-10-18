@@ -9,10 +9,12 @@ export default function GlobalError({ error }) {
   console.log("Sentry object:", Sentry);
 
   useEffect(() => {
-    if (Sentry && error) {
-      Sentry.captureException(error);
-    } else {
-      console.warn('Sentry is not defined or error is missing.');
+    try {
+      if (Sentry && error) {
+        Sentry.captureException(error);
+      }
+    } catch (sentryError) {
+      console.error('Sentry failed to capture the error:', sentryError);
     }
   }, [error]);
 
