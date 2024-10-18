@@ -5,6 +5,9 @@ import NextError from "next/error";
 import { useEffect } from "react";
 
 export default function GlobalError({ error }) {
+  console.log("Error object:", error);
+  console.log("Sentry object:", Sentry);
+
   useEffect(() => {
     if (error) {
       Sentry.captureException(error);
