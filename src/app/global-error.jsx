@@ -7,6 +7,7 @@ import { useEffect } from "react";
 export default function GlobalError({ error }) {
   useEffect(() => {
     if (typeof Sentry !== 'undefined') {
+      console.log("sentry",Sentry)
       Sentry.captureException(error);
     }
   }, [error]);
