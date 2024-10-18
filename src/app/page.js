@@ -9,7 +9,6 @@ import Clients from "@/components/Clients";
 import Experience from "@/components/Experience";
 import Approach from "@/components/Approach";
 import Footer from "@/components/Footer";
-import * as Sentry from "@sentry/nextjs";
 
 export default function Home() {
   return (
