@@ -205,13 +205,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link:'https://github.com/Lucifero-debug'
     },
     {
       id: 2,
-      img: "/twit.svg",
+      img: "/insta.svg",
+      link:'https://www.instagram.com/alone._musk_/'
     },
     {
       id: 3,
       img: "/link.svg",
+      link:'https://www.linkedin.com/in/prashant-kumar-378a482a5/'
     },
   ];
